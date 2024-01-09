@@ -36,3 +36,16 @@ function ColorBlock() {
 
 ColorBlock();
 
+// function to retrieve text and save into local storage
+
+const saveBtn = $(".saveBtn");
+
+saveBtn.on("click", function() {
+
+    const time = $(this).siblings(".hour").text();
+    const textbox = $(this).siblings(".description").val();
+    localStorage.setItem(time, textbox);
+});
+
+
+
