@@ -12,3 +12,6 @@
 
 const today = dayjs().format("dddd[,] MMMM D[th]");
 $("#currentDay").text(today);
+
+
+// Create rows for business hours and event input
