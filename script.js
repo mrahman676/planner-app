@@ -8,4 +8,7 @@
 // Save event in local storage when the save button is clicked
 
 
+// Current Day
 
+const today = dayjs().format("dddd[,] MMMM D[th]");
+$("#currentDay").text(today);
