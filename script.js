@@ -47,5 +47,21 @@ saveBtn.on("click", function() {
     localStorage.setItem(time, textbox);
 });
 
+// function to retain information after refresh
 
+function retainInfo() {
 
+    $(".hour").each(function() {
+        const hourText = $(this).text();
+        const hourStore = localStorage.getItem(hourText);
+    
+        if (hourStore !== null) {
+            const descriptionEl = $(this).siblings(".description");
+            if (descriptionEl.length) {
+                descriptionEl.val(hourStore);
+            }
+        }
+    });
+}
+
+retainInfo();
