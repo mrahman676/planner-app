@@ -14,4 +14,25 @@ const today = dayjs().format("dddd[,] MMMM D[th]");
 $("#currentDay").text(today);
 
 
-// Create rows for business hours and event input
+// Colour change for past, present, future
+
+function ColorBlock() {
+    const hour = dayjs().hour();
+
+    const timeBlocks = $(".time-block");
+
+    for (var i = 0; i < timeBlocks.length; i++) {
+    const present = parseInt($(timeBlocks[i]).attr("id"));
+
+        if (present > hour) {
+            $(timeBlocks[i]).addClass("future");
+        } else if (present === hour) {
+            $(timeBlocks[i]).addClass("present");
+        } else {
+            $(timeBlocks[i]).addClass("past");
+        }
+}
+}
+
+ColorBlock();
+
